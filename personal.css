@@ -14,3 +14,11 @@
 .final-caption p{font:400 5cqw/1.25 Forum,Georgia,serif}
 .final-caption span{display:block;margin-top:5cqw;font-size:4.5cqw}
 .final-caption strong{display:block;margin-top:2cqw;font:400 10cqw/1.3 'Great Vibes',Georgia,serif}
+/* Keep the image out of intrinsic sizing: iOS must not stretch the plate. */
+.personal-venue{height:auto;aspect-ratio:941/1672}
+.personal-venue>img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
+.venue-copy{height:auto;top:25%;left:23%;width:51%;gap:1cqw}
+.venue-copy strong{font-size:5.5cqw}
+.venue-copy b{margin-top:0;font-size:4.2cqw}
+.venue-map{display:inline-block;pointer-events:auto;background:#500707;color:#fff!important;border-radius:999px;padding:1.5cqw 3cqw;font:600 3cqw/1.1 Arial,sans-serif;text-decoration:none;white-space:nowrap;margin:.5cqw 0}
+[data-elem-id="1773049359060"],[data-elem-id="1767953863355000004"]{display:none!important}
