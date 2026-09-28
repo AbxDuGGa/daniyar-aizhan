@@ -1,0 +1,16 @@
+.personal-layer{position:relative;width:100%;aspect-ratio:1080/1920;container-type:inline-size;pointer-events:none;font-family:'Cormorant Garamond',Georgia,serif}.personal-layer p{margin:0}.hero-personal{background:#101010}.hero-personal>img{position:absolute;top:27%;left:13.6%;width:72.8%;height:73%;object-fit:cover;object-position:50% 32%}.personal-intro{color:#fff;text-align:center}.intro-copy{position:absolute;top:5%;left:14%;width:72%;font-size:4.2cqw;line-height:1.3}.couple-names{position:absolute;top:21%;width:100%;font-family:'Great Vibes',Georgia,serif;font-size:9cqw;line-height:1.3}.personal-date{color:#500707;text-align:center}.personal-date p{position:absolute;top:2.5%;width:100%;font-size:5.4cqw}.personal-date span{position:absolute;top:8%;left:0;width:100%;font-size:4.6cqw}.personal-story{color:#fff;text-align:center}.personal-story p{position:absolute;top:5.5%;left:12%;width:76%;font-size:4.6cqw;line-height:1.32}.personal-story em{font-size:5cqw}.personal-venue>img{display:block;width:100%;height:100%}.venue-copy{position:absolute;left:21%;top:25%;width:55%;height:23%;transform:rotate(8deg);color:#500707;text-align:center;display:flex;align-items:center;flex-direction:column;gap:1.2cqw}.venue-copy span{font-size:3.5cqw;line-height:1.2}.venue-copy strong{font-size:5.5cqw;font-weight:500;line-height:.95}.venue-copy b{font-size:4.5cqw;font-weight:500;margin-top:9cqw}.personal-final img{position:absolute;top:9%;left:17%;width:67%;height:57%;object-fit:cover;border:2.2cqw solid #f4efe7;transform:rotate(1deg)}
+.personal-signoff{color:#fff;text-align:center}.personal-signoff p{position:absolute;top:5%;width:100%;font-size:4.6cqw;line-height:1.3}.personal-signoff span{position:absolute;top:16%;left:0;width:100%;font-size:4cqw}.personal-signoff strong{position:absolute;top:20%;left:0;width:100%;font:400 8.5cqw "Great Vibes",Georgia,serif}
+
+/* Match the reference's upright capitals and keep the farewell below its photo. */
+.intro-copy{font-family:Forum,Georgia,serif;text-transform:uppercase;top:5%;left:9%;width:82%;font-size:4.3cqw;line-height:1.22}
+.couple-names{top:21%;font-size:11cqw}
+.personal-date p,.personal-date span{font-family:Forum,Georgia,serif;text-transform:uppercase}
+.personal-date p{font-size:6.6cqw;top:2%}
+.personal-date span{font-size:5.6cqw;top:8%}
+.venue-copy{font-family:Forum,Georgia,serif}
+.venue-copy strong{font-size:6cqw;line-height:1}
+.personal-final img{box-sizing:border-box;top:5%;height:57%}
+.final-caption{position:absolute;top:66%;left:5%;width:90%;color:#fff;text-align:center}
+.final-caption p{font:400 5cqw/1.25 Forum,Georgia,serif}
+.final-caption span{display:block;margin-top:5cqw;font-size:4.5cqw}
+.final-caption strong{display:block;margin-top:2cqw;font:400 10cqw/1.3 'Great Vibes',Georgia,serif}
