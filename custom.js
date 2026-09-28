@@ -37,11 +37,17 @@ async function sendResponse(form){
 document.addEventListener('DOMContentLoaded',()=>{
  const dialog=document.createElement('dialog');dialog.className='rsvp-reminder';dialog.setAttribute('aria-labelledby','rsvp-reminder-title');
  dialog.innerHTML='<button type="button" class="reminder-close" aria-label="Закрыть">×</button><p class="reminder-kicker">Данияр × Айжан</p><h2 id="rsvp-reminder-title">Будем ждать вашего ответа</h2><p>Перед тем как посмотреть маршрут, не забудьте подтвердить присутствие.</p><button type="button" class="reminder-confirm">Подтвердить присутствие ↓</button><a class="reminder-map" target="_blank" rel="noopener">Открыть карту</a>';
- document.body.append(dialog);let sourceLink;
+ document.body.append(dialog);let sourceLink;let movingToForm=false;
  dialog.querySelector('.reminder-close').onclick=()=>dialog.close();
  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
  dialog.querySelector('.reminder-map').onclick=()=>dialog.close();
- dialog.querySelector('.reminder-confirm').onclick=()=>{dialog.close();const f=document.getElementById('form2008532863');f?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});setTimeout(()=>f?.querySelector('input[type=text]')?.focus({preventScroll:true}),500)};
+ dialog.querySelector('.reminder-confirm').onclick=()=>{movingToForm=true;dialog.close();const f=document.getElementById('form2008532863');f?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});setTimeout(()=>f?.querySelector('input[type=text]')?.focus({preventScroll:true}),500)};
  document.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a||a.classList.contains('reminder-map')||!a.href.startsWith('https://2gis.kz/'))return;if(document.querySelector('form[data-sent="true"]'))return;e.preventDefault();e.stopPropagation();sourceLink=a;dialog.querySelector('.reminder-map').href=a.href;dialog.showModal();},true);
- dialog.addEventListener('close',()=>sourceLink?.focus({preventScroll:true}));
+ dialog.addEventListener('close',()=>{if(!movingToForm)sourceLink?.focus({preventScroll:true});movingToForm=false;});
+});
+
+// Reveal once; returning up the page never resets content to transparent.
+document.addEventListener('DOMContentLoaded',()=>{
+ const reveal=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('content-revealed');reveal.unobserve(entry.target)}}},{threshold:0});
+ document.querySelectorAll('.personal-layer').forEach(el=>reveal.observe(el));
 });

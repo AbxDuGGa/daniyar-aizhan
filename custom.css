@@ -22,3 +22,11 @@ html.curtains-closed,html.curtains-closed body{overflow:hidden!important}
 .rsvp-reminder h2{font:400 30px/1.1 Forum,Georgia,serif;margin:18px 0}.rsvp-reminder p{margin:16px 0}.rsvp-reminder .reminder-kicker{font:28px 'Great Vibes',Georgia,serif}
 .reminder-close{position:absolute;right:8px;top:4px;border:0;background:none;color:#510a0c;font:28px Georgia;min-width:44px;min-height:44px}
 .reminder-confirm,.reminder-map{display:block;box-sizing:border-box;width:100%;padding:14px 8px;margin-top:18px;border:1px solid #510a0c;border-radius:30px;font:16px/1.2 Forum,Georgia,serif;cursor:pointer}.reminder-confirm{background:#510a0c;color:#fff}.reminder-map{background:transparent;color:#510a0c!important;text-decoration:none;margin-top:10px}
+/* Scroll animations must never hide content again after an RSVP jump. */
+[data-animate-sbs-event="scroll"],
+[data-animate-sbs-event="scroll"] .tn-atom__sbs-anim-wrapper{
+ opacity:1!important;visibility:visible!important;transform:none!important;
+}
+@keyframes invitation-reveal{from{translate:0 14px}to{translate:0 0}}
+.personal-layer.content-revealed{animation:invitation-reveal .65s ease-out both}
+@media(prefers-reduced-motion:reduce){.personal-layer.content-revealed{animation:none}}
