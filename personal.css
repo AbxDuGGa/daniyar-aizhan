@@ -22,3 +22,6 @@
 .venue-copy b{margin-top:0;font-size:4.2cqw}
 .venue-map{display:inline-block;pointer-events:auto;background:#500707;color:#fff!important;border-radius:999px;padding:1.5cqw 3cqw;font:600 3cqw/1.1 Arial,sans-serif;text-decoration:none;white-space:nowrap;margin:.5cqw 0}
 [data-elem-id="1773049359060"],[data-elem-id="1767953863355000004"]{display:none!important}
+/* Decorative Tilda layers must not intercept touch on the venue link. */
+[data-elem-type="image"], [data-elem-type="image"] .tn-atom, [data-elem-type="image"] .tn-atom__sbs-anim-wrapper{pointer-events:none!important}
+[data-elem-type="image"] .venue-map{pointer-events:auto!important}
