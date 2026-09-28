@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  dialog.querySelector('.reminder-close').onclick=()=>dialog.close();
  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
  dialog.querySelector('.reminder-map').onclick=()=>dialog.close();
- dialog.querySelector('.reminder-confirm').onclick=()=>{movingToForm=true;dialog.close();const f=document.getElementById('form2008532863');f?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});setTimeout(()=>f?.querySelector('input[type=text]')?.focus({preventScroll:true}),500)};
+ dialog.querySelector('.reminder-confirm').onclick=()=>{movingToForm=true;dialog.close();const f=document.getElementById('form2008532863');f?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});};
  document.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a||a.classList.contains('reminder-map')||!a.href.startsWith('https://2gis.kz/'))return;if(document.querySelector('form[data-sent="true"]'))return;e.preventDefault();e.stopPropagation();sourceLink=a;dialog.querySelector('.reminder-map').href=a.href;dialog.showModal();},true);
  dialog.addEventListener('close',()=>{if(!movingToForm)sourceLink?.focus({preventScroll:true});movingToForm=false;});
 });
@@ -50,4 +50,15 @@ document.addEventListener('DOMContentLoaded',()=>{
 document.addEventListener('DOMContentLoaded',()=>{
  const reveal=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('content-revealed');reveal.unobserve(entry.target)}}},{threshold:0});
  document.querySelectorAll('.personal-layer').forEach(el=>reveal.observe(el));
+});
+
+// Clip only the unused artboard tail; use actual rendered caption bounds.
+window.addEventListener('load',()=>{
+ const records=document.getElementById('allrecords');
+ const end=document.querySelector('.final-caption');
+ if(!records||!end)return;
+ const fit=()=>{const h=Math.ceil(end.getBoundingClientRect().bottom-records.getBoundingClientRect().top+48);if(h>500){records.style.height=h+'px';records.style.overflow='clip';}};
+ requestAnimationFrame(()=>requestAnimationFrame(fit));
+ document.fonts?.ready.then(fit);
+ window.addEventListener('resize',()=>requestAnimationFrame(fit));
 });
