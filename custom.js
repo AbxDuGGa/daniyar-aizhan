@@ -10,7 +10,7 @@ const b=document.createElement('button');b.className='music-toggle';b.type='butt
 // A single viewport-sized curtain avoids independent Tilda image heights.
 document.addEventListener('DOMContentLoaded',()=>{
  const cover=document.createElement('div');cover.className='curtain-cover';
- cover.innerHTML='<div class="curtain-panel curtain-left"><img src="assets/asset-09.png" alt=""></div><div class="curtain-panel curtain-right"><img src="assets/asset-09.png" alt=""></div><button class="curtain-open" type="button" aria-label="Открыть приглашение"><img src="assets/asset-14.png" alt=""><span>Нажмите,<br>чтобы открыть</span></button>';
+ cover.innerHTML='<div class="curtain-panel curtain-left"><img src="assets/curtain-white.png" alt=""></div><div class="curtain-panel curtain-right"><img src="assets/curtain-white.png" alt=""></div><button class="curtain-open" type="button" aria-label="Открыть приглашение"><img src="assets/asset-14.png" alt=""><span>Нажмите,<br>чтобы открыть</span></button>';
  document.body.append(cover);document.documentElement.classList.add('curtains-closed');
  cover.querySelector('button').addEventListener('click',()=>{
   document.querySelector('audio')?.play().catch(()=>{});
